@@ -20,7 +20,6 @@ const MainCarousel = () => {
     }, []);
 
     return (
-        loading ? <div className='d-flex justify-content-center' ><LoadingIcons.BallTriangle /> </div> :
             <div className='container' >
                 <div className='row d-flex justify-content-center align-items-center'>
                     <div className='col-md-5 profileImage'>

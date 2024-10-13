@@ -1,4 +1,5 @@
 const express = require("express");
+require('dotenv').config();
 const connectDB = require('./db.js');
 const homeModel = require('./models/Home.js');
 const cors = require('cors');

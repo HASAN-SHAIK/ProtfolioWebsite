@@ -1,8 +1,12 @@
 // import mongoose from 'mongoose';
 const mongoose = require('mongoose');
+require('dotenv').config()
+
 const connectDB = async () => {
+    const {username, password, cluster, dbname} = process.env;
     try {
-        const conn = mongoose.connect('mongodb+srv://hasanshaik:hasanshaik@protfoliocluster.v76vt.mongodb.net/protfolioDB');
+        console.log(username)
+        mongoose.connect(`mongodb+srv://${username}shaik:${password}@${cluster}.v76vt.mongodb.net/${dbname}`);
         console.log("Connected to MongoDB");
     }
     catch (err) {
