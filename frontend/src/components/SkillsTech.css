@@ -1,0 +1,95 @@
+.badge {
+    /* width: 80px;
+    height: 80px; */
+    background-color: darkblue;
+    font-size: larger;
+    border: 0;
+    border: 10px;
+    transition: all 1s;
+}
+
+div {
+    transition: all 1s;
+}
+
+.skillHeadContainer {
+    /* display: flex */
+    /* background-color: ; */
+}
+
+.skillHeading {
+    scale: (0.1);
+}
+
+
+.cleanTransition {
+    transition: all 1s;
+}
+
+.skillClass:nth-child(odd) {
+    transform: translateX(-200px);
+    margin: 2%;
+    opacity: 0;
+    transition: all 2s;
+}
+
+.skillClass:nth-child(even) {
+    transform: translateX(200px);
+    margin: 2%;
+    opacity: 0;
+    transition: all 2s;
+}
+
+.skillClass.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.skillHeading {
+    height: 7vh;
+    opacity: 0;
+    transform: scale(0);
+    transform: translatex(200px);
+    transition: opacity 2s ease-out;
+}
+
+.skillHeading.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* .skillType:hover {
+    box-shadow: 2px 2px 2px 2px lightblue;
+    padding: 2%;
+    border: 0;
+    border-radius: 2%;
+    transition: all 1s;
+
+}
+
+*/
+.skillClass {
+    transition: all 1s;
+}
+
+/* .skillClass:hover {
+box-shadow: 2px 2px 20px 2px;
+padding: 2%;
+border: 0;
+border-radius: 2%;
+transition: all 1s;
+}
+
+*/
+.status-bar {
+    border: 2px solid grey;
+    width: 100%;
+    transition: all 1s;
+}
+
+.status-fill {
+    background-color: blue;
+    height: 30px;
+    transition: all 1s;
+
+}

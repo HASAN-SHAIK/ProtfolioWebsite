@@ -1,0 +1,50 @@
+.profileImage {
+    transition: all 1s;
+    /* max-height: 100vh;
+    max-width: 50vw; */
+    /* width: 50%; */
+}
+
+.name {
+    font-size: 5em;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 480px) {
+    .name {
+        font-size: 3em;
+    }
+}
+
+.profileImageProperties {
+    border: 0;
+    border-radius: 20px;
+    box-shadow: 2px;
+    height: 100%;
+    width: 100%;
+    /* max-height: 100vh;
+    /* max-width: 45vw; */
+    transition: all 1s;
+}
+
+.profileImageProperties:hover {
+    width: 45vw;
+    /* height: 80vh; */
+    transition: all 1s;
+}
+
+.content {
+    max-width: 30vw;
+}
+
+.aboutMe {
+    color: red;
+    font-size: xx-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 1em;
+}
+
+.description {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

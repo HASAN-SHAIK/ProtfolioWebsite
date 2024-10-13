@@ -1,0 +1,30 @@
+.project-row:hover {
+    box-shadow: 2px 2px 30px 2px rgb(0, 93, 99);
+    transition: all .4s;
+}
+
+.projectName {
+    color: rgb(209, 249, 12);
+}
+
+.project-row {
+    transition: all 1s;
+    background-color: #3862a0;
+    color: white;
+    /* border-radius: 2%; */
+}
+
+.textColor {
+    color: #4facfe;
+    font-size: larger;
+}
+
+.aboutMe {
+    color: rgb(230, 95, 95);
+    font-size: large;
+
+}
+
+p {
+    white-space: pre-line;
+}

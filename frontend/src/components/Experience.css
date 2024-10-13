@@ -1,0 +1,36 @@
+.experienceCard {
+    background-color: beige;
+    min-height: 20vh;
+    border: 0;
+    border-radius: 6px;
+    opacity: 0;
+    transform: translateX(150px);
+    transition: 1s all;
+}
+
+.experienceCard.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.year {
+    background-color: aqua;
+    border: 0;
+    border-radius: 10px;
+}
+
+.connection {
+    height: 10vh;
+    width: 16vw;
+}
+
+.experienceDate {
+    opacity: 0;
+    transform: scale(0.4);
+    transition: .8s transform ease-in-out;
+}
+
+.experienceDate.visible {
+    opacity: 1;
+    transform: scale(1);
+}

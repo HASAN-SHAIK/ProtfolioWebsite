@@ -1,0 +1,18 @@
+.App {
+    background-image: linear-gradient(#d1e3f9, #beebfa);
+    color: #1f375b;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.cleanTransition {
+    transition: all 1s;
+}
+
+.footerText {
+    font-size: x-small;
+}
