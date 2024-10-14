@@ -12,17 +12,9 @@ export default function Experience({ url }) {
       await axios.get(`${url}/experiences`)
         .then((res) => setExperiences(res.data))
         .catch(err => console.log("Error from Experiences.js", err));
-      const experienceCards = await document.querySelectorAll('.experienceCard');
-      experienceCards.forEach((exp, index) => {
-        exp.classList.add('visible')
-      })
-      const experienceDates = document.querySelectorAll('.experienceDate');
-      experienceDates.forEach((exp, index) => {
-        exp.classList.add('visible')
-      })
+      setLoading(false);
     }
     fetchData();
-    setLoading(false);
   }, []);
   useEffect(() => {
     const experienceCards = document.querySelectorAll('.experienceCard');
