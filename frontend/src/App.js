@@ -7,17 +7,19 @@ import Projects from './components/Projects';
 import SkillsTech from './components/SkillsTech';
 import Contact from './components/Contact';
 import Experience from './components/Experience';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Certifications from './components/Certifications';
+import axios from 'axios';
 
 function App() {
-  var [skills, setSkills] = useState();
   useEffect(() => {
     const func = async () => {
       await axios.get('https://protfoliowebsite.onrender.com/')
     }
+    func();
   }, [])
-  const url = 'https://protfoliowebsite.onrender.com/api';
+  var [skills, setSkills] = useState();
+  const url = 'http://localhost:8080/api';
   return (
     <BrowserRouter>
       <div class="App">
