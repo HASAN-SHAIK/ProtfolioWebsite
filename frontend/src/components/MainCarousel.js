@@ -11,7 +11,7 @@ const MainCarousel = () => {
     var [data, SetData] = useState();
     useEffect(() => {
         const fetchData = async () => {
-            data = await axios.get('https://fascinating-banoffee-96e621.netlify.app/api/home')
+            data = await axios.get('https://protfoliowebsite.onrender.com/api/home')
                 .then(res => SetData(res.data))
                 .catch((err) => console.log("Error in Home.js", err));
             setLoading(false);
