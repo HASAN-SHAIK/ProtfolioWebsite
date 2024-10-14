@@ -12,7 +12,7 @@ const Certifications = ({ url }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(${url}/certificates);
+                const res = await axios.get(`${url}/certificates`);
                 setCertificates(res.data);
             } catch (err) {
                 console.log("Error from Certificate.js", err);
