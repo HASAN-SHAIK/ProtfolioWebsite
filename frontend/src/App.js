@@ -12,6 +12,11 @@ import Certifications from './components/Certifications';
 
 function App() {
   var [skills, setSkills] = useState();
+  useEffect(() => {
+    const func = async () => {
+      await axios.get('https://protfoliowebsite.onrender.com/')
+    }
+  }, [])
   const url = 'https://protfoliowebsite.onrender.com/api';
   return (
     <BrowserRouter>
