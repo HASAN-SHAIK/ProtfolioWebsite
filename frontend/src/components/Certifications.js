@@ -13,16 +13,18 @@ const Certifications = ({ url }) => {
             await axios.get(`${url}/certificates`)
                 .then((res) => setCertificates(res.data))
                 .catch(err => console.log("Error from Certificate.js", err));
-            const certificates = document.querySelectorAll('.certificate');
-            certificates.forEach((cert, index) => {
-                if (index < 2)
-                    cert.classList.add('visible');
-            })
             setLoading(false);
         }
         fetchData();
 
     }, []);
+    document.addEventListener('load', () => {
+        const certificates = document.querySelectorAll('.certificate');
+        certificates.forEach((cert, index) => {
+            if (index < 2)
+                cert.classList.add('visible');
+        })
+    });
 
     document.addEventListener('scroll', () => {
         const certificates = document.querySelectorAll('.certificate');
