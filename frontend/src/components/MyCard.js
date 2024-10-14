@@ -12,7 +12,7 @@ const MyCard = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            await axios.get('http://localhost:8080/api/cards')
+            await axios.get('https://fascinating-banoffee-96e621.netlify.app/api/cards')
                 .then(res => setCards(res.data))
                 .catch((err) => console.log("Error in Home.js", err));
             setLoading(false);

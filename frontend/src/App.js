@@ -12,7 +12,7 @@ import Certifications from './components/Certifications';
 
 function App() {
   var [skills, setSkills] = useState();
-  const url = 'http://localhost:8080/api';
+  const url = 'https://fascinating-banoffee-96e621.netlify.app/api';
   return (
     <BrowserRouter>
       <div class="App">
