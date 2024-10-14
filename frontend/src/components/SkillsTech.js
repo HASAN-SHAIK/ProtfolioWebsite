@@ -12,20 +12,23 @@ export default function SkillsTech({ url }) {
       await axios.get(`${url}/skills`)
         .then((res) => setSkills(res.data))
         .catch(err => console.log("Error from Experiences.js", err));
-      const skillHeadings = document.querySelectorAll('.skillHeading');
-      const skills = document.querySelectorAll('.skillClass');
-      skills.forEach((skill, index) => {
-        if (index < 5)
-          skill.classList.add('visible');
-      })
-      skillHeadings.forEach((skillHead, index) => {
-        if (index < 2)
-          skillHead.classList.add('visible')
-      })
+
       setLoading(false);
     }
     fetchData();
   }, []);
+  useEffect(() => {
+    const skillHeadings = document.querySelectorAll('.skillHeading');
+    const skills = document.querySelectorAll('.skillClass');
+    skills.forEach((skill, index) => {
+      if (index < 5)
+        skill.classList.add('visible');
+    })
+    skillHeadings.forEach((skillHead, index) => {
+      if (index < 2)
+        skillHead.classList.add('visible')
+    })
+  }, [skills]);
 
   document.addEventListener('scroll', () => {
     const skillHeadings = document.querySelectorAll('.skillHeading');
