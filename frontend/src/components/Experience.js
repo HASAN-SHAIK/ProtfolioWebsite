@@ -8,6 +8,7 @@ export default function Experience({ url }) {
   var [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
+      console.log("HEEHEH")
       await axios.get(`${url}/experiences`)
         .then((res) => setExperiences(res.data))
         .catch(err => console.log("Error from Experiences.js", err));
@@ -23,6 +24,16 @@ export default function Experience({ url }) {
     fetchData();
     setLoading(false);
   }, []);
+  useEffect(() => {
+    const experienceCards = document.querySelectorAll('.experienceCard');
+    experienceCards.forEach((exp) => {
+      exp.classList.add('visible')
+    })
+    const experienceDates = document.querySelectorAll('.experienceDate');
+    experienceDates.forEach((exp) => {
+      exp.classList.add('visible')
+    })
+  }, [loading]);
   // useEffect(() => {
   //   console.log("Camee Here")
   //   const experienceCards = document.querySelectorAll('.experienceCard');
@@ -38,9 +49,9 @@ export default function Experience({ url }) {
     loading ? <div className='d-flex justify-content-center' ><LoadingIcons.BallTriangle /> </div> :
       <div className='container d-flex flex-column-reverse'>
         {
-          experiences && experiences.map((experience) => {
+          experiences && experiences.map((experience, index) => {
             return (
-              <div className='row mt-5'>
+              <div key={index} className='row mt-5'>
                 <div className='col-md-4'>
                   <div className='row text-center'>
                     <div className='experienceDate col-md-12 p-0 d-flex justify-content-center flex-column year '>
