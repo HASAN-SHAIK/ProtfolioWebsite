@@ -11,20 +11,22 @@ export default function Experience({ url }) {
       await axios.get(`${url}/experiences`)
         .then((res) => setExperiences(res.data))
         .catch(err => console.log("Error from Experiences.js", err));
-      const experienceDates = document.querySelectorAll('.experienceDate');
-      experienceDates.forEach((exp, index) => {
-        exp.classList.add('visible')
-      })
-      const experienceCards = document.querySelectorAll('.experienceCard');
-      experienceCards.forEach((exp, index) => {
-        exp.classList.add('visible')
-      })
-      setLoading(false);
 
     }
     fetchData();
     console.log("Experiences", experiences)
   }, []);
+  useEffect(() => {
+    const experienceCards = document.querySelectorAll('.experienceCard');
+    experienceCards.forEach((exp, index) => {
+      exp.classList.add('visible')
+    })
+    const experienceDates = document.querySelectorAll('.experienceDate');
+    experienceDates.forEach((exp, index) => {
+      exp.classList.add('visible')
+    })
+    setLoading(false);
+  }, [experiences]);
   return (
     loading ? <div className='d-flex justify-content-center' ><LoadingIcons.BallTriangle /> </div> :
       <div className='container d-flex flex-column-reverse'>
