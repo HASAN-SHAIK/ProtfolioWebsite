@@ -8,35 +8,52 @@ export default function Experience({ url }) {
   var [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
-      console.log("HEEHEH")
       await axios.get(`${url}/experiences`)
         .then((res) => setExperiences(res.data))
         .catch(err => console.log("Error from Experiences.js", err));
       setLoading(false);
     }
     fetchData();
-  }, []);
+  }, [url]);
   useEffect(() => {
     const experienceCards = document.querySelectorAll('.experienceCard');
-    experienceCards.forEach((exp) => {
-      exp.classList.add('visible')
+    experienceCards.forEach((exp, index) => {
+      if (index < 2)
+        exp.classList.add('visible')
     })
     const experienceDates = document.querySelectorAll('.experienceDate');
-    experienceDates.forEach((exp) => {
-      exp.classList.add('visible')
+    experienceDates.forEach((exp, index) => {
+      if (index < 2)
+        exp.classList.add('visible')
     })
-  }, [loading]);
-  // useEffect(() => {
-  //   console.log("Camee Here")
-  //   const experienceCards = document.querySelectorAll('.experienceCard');
-  //   experienceCards.forEach((exp, index) => {
-  //     exp.classList.add('visible')
-  //   })
-  //   const experienceDates = document.querySelectorAll('.experienceDate');
-  //   experienceDates.forEach((exp, index) => {
-  //     exp.classList.add('visible')
-  //   })
-  // }, [experiences]);
+  }, [experiences]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const experienceCards = document.querySelectorAll('.experienceCard');
+      experienceCards.forEach((cert) => {
+        const rect = cert.getBoundingClientRect();
+        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+          cert.classList.add('visible');
+        }
+      });
+      const experienceDates = document.querySelectorAll('.experienceDate');
+      experienceDates.forEach((cert) => {
+        const rect = cert.getBoundingClientRect();
+        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+          cert.classList.add('visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the scroll event listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [experiences]);
+
   return (
     loading ? <div className='d-flex justify-content-center' ><LoadingIcons.BallTriangle /> </div> :
       <div className='container d-flex flex-column-reverse'>
