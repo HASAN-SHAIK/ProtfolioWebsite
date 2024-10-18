@@ -32,7 +32,7 @@ export default function Projects({ url }) {
                   <div>{project.technologies}</div>
                   <b className='aboutMe'>About Project</b>
                   <p>{project.description}</p>
-                  <button src={project.link}>Source Code</button>
+                  <button><a href={project.link} target="_blank">Source Code</a></button>
                 </div>
               </div>
             );

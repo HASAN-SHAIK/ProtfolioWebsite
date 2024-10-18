@@ -45,7 +45,7 @@ a {
     transition: all 1s;
 }
 
-navbar-brand,
+/* navbar-brand,
 a:focus {
     color: blue;
     background-color: antiquewhite;
@@ -53,7 +53,7 @@ a:focus {
     border: 0px;
     border-radius: 1em;
     transition: all 1s;
-}
+} */
 
 .dropdown-content {
     position: absolute;
