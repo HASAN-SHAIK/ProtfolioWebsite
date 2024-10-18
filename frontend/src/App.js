@@ -14,12 +14,11 @@ import axios from 'axios';
 function App() {
   useEffect(() => {
     const func = async () => {
-      await axios.get('https://protfoliowebsite.onrender.com/')
+      await axios.get('https://protfoliowebsite.onrender.com/api/home')
     }
     func();
   }, [])
-  var [skills, setSkills] = useState();
-  const url = 'http://localhost:8080/api';
+  const url = 'https://protfoliowebsite.onrender.com/api';
   return (
     <BrowserRouter>
       <div class="App">
@@ -39,39 +38,4 @@ function App() {
 }
 
 export default App;
-
-// Filename - App.js
-
-// import logo from "./logo.svg";
-// import "./App.css";
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img
-//           src={logo}
-//           className="App-logo"
-//           alt="logo" />
-//         <p>A simple React app.....</p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer">
-//           Learn React
-//         </a>
-//         <form
-//           action="/"
-//           className="form">
-//           <button type="submit">
-//             Connected?
-//           </button>
-//         </form>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
 
