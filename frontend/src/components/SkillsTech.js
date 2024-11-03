@@ -74,7 +74,6 @@ export default function SkillsTech({ url }) {
                         <div className='mt-3 status-bar col-12 p-0'>
                           <img width={`${eachSkill.percentage}%`} class="status-fill" id='widthPercentage' />
                         </div>
-                        </div>
                       </div>
                     </div>)
                 })}
