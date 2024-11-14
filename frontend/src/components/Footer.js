@@ -7,13 +7,13 @@ export default function Footer() {
   return (
     <div>
     <div className='row footer-container'>
-        <div className='col-sm-4 footer-text'>
+        <div className='col-sm-4 mt-sm-4 footer-text'>
             <h2>QUICK LINKS</h2>
-            <div><Link>Home</Link></div>
-            <div><Link>Skills</Link></div>
-            <div><Link>Projects</Link></div>
-            <div><Link>Experience</Link></div>
-            <div><Link>Certifications</Link></div>
+            <div><Link to='/'>Home</Link></div>
+            <div><Link to='/skillstech'>Skills</Link></div>
+            <div><Link to='/projects'>Projects</Link></div>
+            <div><Link to='/experience'>Experience</Link></div>
+            <div><Link to='/certifications'>Certifications</Link></div>
         </div> 
         <div className='col-sm-4 mt-4'>
             <h2>CONTACT INFO</h2>
