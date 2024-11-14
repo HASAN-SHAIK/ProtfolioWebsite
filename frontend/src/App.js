@@ -10,15 +10,20 @@ import Experience from './components/Experience';
 import { useEffect, useState } from 'react';
 import Certifications from './components/Certifications';
 import axios from 'axios';
+import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {
     const func = async () => {
       await axios.get('https://protfoliowebsite.onrender.com/api/home')
+      await axios.post('https://protfoliowebsite.onrender.com/api/profileViews');
+      // await axios.post('https://localhost:8080/api/profileViews');
     }
     func();
   }, [])
   const url = 'https://protfoliowebsite.onrender.com/api';
+  // const url = 'https://localhost:3000/api';
+
   return (
     <BrowserRouter>
       <div class="App">
@@ -31,8 +36,8 @@ function App() {
           <Route path='/experience' element={<Experience url={url} />} />
           <Route path='/certifications' element={<Certifications url={url} />} />
         </Routes>
-        <div className='float-right mt-5 footerText text-center'>All the Data Displayed is coming from database</div>
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }

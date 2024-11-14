@@ -55,6 +55,12 @@ app.get('/api/certificates', async (req, res) => {
     res.send(certificates);
 })
 
+app.post('/api/profileViews', async(req, res)=>{
+    const {profileViews} = await homeModel.findOne();
+    const resp = await homeModel.updateOne({_id:"67026b1530690920314cab3d"},{ $set:{profileViews : profileViews+1}});
+    res.json({message: profileViews});
+})
+
 
 const PORT = process.env.PORT || 8080;
 

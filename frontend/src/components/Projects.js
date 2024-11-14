@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Projects.css'
 import axios from 'axios';
 import LoadingIcons from 'react-loading-icons'
+import Footer from './Footer';
 
 export default function Projects({ url }) {
   var [loading, setLoading] = useState(true);
@@ -17,7 +18,8 @@ export default function Projects({ url }) {
     console.log("Projetcs", projects)
   }, []);
   return (
-    loading ? <div className='d-flex justify-content-center' ><LoadingIcons.BallTriangle /> </div> :
+    loading ?<div className='text-center'><LoadingIcons.BallTriangle /><div>I am using free tier Please wait till data load</div> </div> :
+    // loading ? <div className='d-flex justify-content-center' ><LoadingIcons.BallTriangle /> </div> :
       <div className='project container p-3 mt-4'>
         {
           projects && projects.map((project) => {
@@ -38,7 +40,6 @@ export default function Projects({ url }) {
             );
           })
         }
-
       </div>
   )
 }

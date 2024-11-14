@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import './Experience.css';
 import LoadingIcons from 'react-loading-icons'
+import Footer from './Footer';
 
 export default function Experience({ url }) {
   var [experiences, setExperiences] = useState()
@@ -55,7 +56,8 @@ export default function Experience({ url }) {
   }, [experiences]);
 
   return (
-    loading ? <div className='d-flex justify-content-center' ><LoadingIcons.BallTriangle /> </div> :
+    loading ?<div className='text-center'><LoadingIcons.BallTriangle /><div>I am using free tier Please wait till data load</div> </div> :
+    // loading ? <div className='d-flex justify-content-center' ><LoadingIcons.BallTriangle /> </div> :
       <div className='container d-flex flex-column-reverse'>
         {
           experiences && experiences.map((experience, index) => {

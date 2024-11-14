@@ -54,11 +54,8 @@ const Certifications = ({ url }) => {
     }, [certificates]); // Re-run when the certificates change
 
     return (
-        loading ? (
-            <div className='d-flex justify-content-center'>
-                <LoadingIcons.BallTriangle />
-            </div>
-        ) : (
+    loading ?<div className='text-center'><LoadingIcons.BallTriangle /><div>I am using free tier Please wait till data load</div> </div>: 
+    (
             <div className='container p-5'>
                 <div className='row'>
                     {
