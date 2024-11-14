@@ -13,10 +13,14 @@ import axios from 'axios';
 import Footer from './components/Footer';
 
 function App() {
+  const [view, setView] = useState(1)
   useEffect(() => {
     const func = async () => {
       await axios.get('https://protfoliowebsite.onrender.com/api/home')
+      if(view){
       await axios.post('https://protfoliowebsite.onrender.com/api/profileViews');
+      setView(0);
+      }
       // await axios.post('https://localhost:8080/api/profileViews');
     }
     func();
